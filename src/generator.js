@@ -15,6 +15,10 @@ class Generator {
   $add(type, func) {
     this[type] = func;
   }
+
+  create(type, args = []) {
+    return this[type].apply(null, args);
+  }
 }
 
 module.exports = Generator;
